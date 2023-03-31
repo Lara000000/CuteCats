@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+h3 {
+    margin: 0;
+}
+.container {
+    background-color: rgba(120, 251, 236, 0.637);
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: flex-start;
+    gap: 30px;
+}
+.card {
+    background-color: rgba(244, 156, 237, 0.478);
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    background-image: url("https://kubnews.ru/upload/iblock/ecc/vymh4uk3iqxa7b70s7mpn0waph3jvyf3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.default {
+    background-image: url("images/default.png");
+    background-size: contain;
+}
+.card::before {
+    content: "";
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dededeaa;
+}
+
+.card>* {
+    position: relative;
+
+}
+.card_like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: crimson;
+    cursor: pointer;
+}
+.card h3 {
+    margin-bottom: 5px;
+}
