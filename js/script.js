@@ -51,7 +51,7 @@ function createCard(cat, el = box) {
         card.append(age);
     }
     card.addEventListener("click", (e) => {
-        location.replace("page.html?id=${cat.id}") //сделать еще назад стрелку
+        location.assign(`page.html?id=${cat.id}`) 
     })
 
     el.append(card);
@@ -63,8 +63,6 @@ function deleteCard(id, el) {
             method: "delete"
         })
             .then(res => {
-                // console.log(res);
-                // console.log(res.status);
                 if (res.status === 200) {
                     el.remove();
                     cats = cats.filter(c => {c.id !==id});
@@ -81,7 +79,7 @@ function deleteCard(id, el) {
 //         console.log(data);
 //         ids = [...data];
 //         myCat.id = ids.length ? ids[ids.length - 1] + 1 : 1;
-//         addCat(???);
+//         addCat();
 //     })
 
 
@@ -118,10 +116,6 @@ if (cats) {
         .then(function (res) {
             console.log(res);
             if (res.statusText === "OK") {
-                /* Все методы ras возвращают Promise:
-                res.text => возвращает текстовое содержимое (HTML-файл)
-                res.blob() => бинарный формат данных
-                res.json() => отображает данные в виде объекта */
                 return res.json();
             }
         })
@@ -130,7 +124,7 @@ if (cats) {
             if (!data.length) {
                 box.innerHTML = "<div class=\"empty\">У вас еще нет питомцев</div>"
             } else {
-                cats = [...data]; //деструктуризация (копирование объекта или массива)
+                cats = [...data]; 
                 localStorage.setItem("cats-data", JSON.stringify(data));
                 for (let c of data) {
                     createCard(c, box);
@@ -139,18 +133,3 @@ if (cats) {
         })
 }
 
-
-/* AJAX - отправить запрос на другой сервер бех перезагрузки страницы (fetch / xhr - XmlHttpRequest / axios)
-Asyns
-JavaScript
-And
-XML
-
-request fetch:
-        1) path - путь запроса
-        2) http-заголовки - объект со всеми параметрами запроса (method, headers, body - то что отправляется на сервер (данные))
-        Из объекта в строку
-        JSON.stringify(obj) <> {a: 123} => '{"a": 123}' 
-        Из стргоки в объект
-        JSON.parse(str) <> '{"a": 123}'=> {a: 123}
- */

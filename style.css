@@ -48,10 +48,11 @@ h3 {
     position: relative;
 
 }
+
 .card_like {
     position: absolute;
-    top: 8px;
     right: 8px;
+    top: 8px;
     color: crimson;
     cursor: pointer;
 }
@@ -61,8 +62,8 @@ h3 {
 
 .card__trash {
     position: absolute;
+    right: 10px;
     bottom: 8px;
-    right: 8px;
     color: crimson;
     cursor: pointer;
     color: rgb(108, 87, 87);
@@ -70,6 +71,7 @@ h3 {
 .card__trash:hover {
     color: crimson;
 }
+
 
 
 
@@ -147,12 +149,10 @@ nav {
     gap: 20px;
     align-content: center;
 }
-nav i {
+.control>i {
     font-size: 1.4rem;
     cursor: pointer;
 }
-
-nav i:hover {
-    columns: silver;
+.control>i:hover {
+    color: silver;
 }
-

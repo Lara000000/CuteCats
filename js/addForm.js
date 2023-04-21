@@ -55,8 +55,5 @@ addForm.addEventListener("submit", e => {
     });
 });
 
-// const chb = addForm.querySelector("[type=\"checkbox\"]");
-// console.log(chb);
-// chb.addEventListener("change", e => {
-//     console.log(chb.checked);
-// })
+
+

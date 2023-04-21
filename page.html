@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница для котика</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="page/st.css">
+    <title>Описание</title>
 </head>
 <body>
-    <div class="info">
-        <h1>Котик</h1>
+    <div class="btns"> 
+        <button class="back">На главную</button>
+        <button class="update">Изменить кота</button>
     </div>
-    <script src="js/page.js"></script>
+    <h2 class="modal_name"></h2>
+    <div class="info">
+        <div class="img"></div>
+    </div>
+    <div class="modal-container" data-type="upd">
+        <div class="modal">
+            <i class="fa-regular fa-circle-xmark modal-close"></i>
+            <h2>
+                Изменить котика
+            </h2>
+            <form id="upd">
+                <input type="number" id="inp1" required disabled placeholder="1" min="1">
+                <input type="text" id="inp2" name="name" placeholder="Имя кота" required disabled>
+                <input type="text" id="inp3" name="image" placeholder="Картинка">
+                <input type="number" id="inp4" name="age" placeholder="Возраст">
+                <input type="number" id="inp5" name="rate" placeholder="рейтинг" min="0" max="5">
+                <label>
+                    <input type="checkbox" name="favorite">
+                    Любимчик
+                </label>
+                <textarea name="description" placeholder="информация о питомце"></textarea>
+                <button  class="updBtn" type="submit">Изменить</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- <script src="js/global.js"></script> -->
+    <script src="page/page.js"></script>
+    <script src="js/updForm.js"></script>
 </body>
 </html>
+
